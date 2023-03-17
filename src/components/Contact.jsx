@@ -6,6 +6,8 @@ import { styles } from "../styles";
 import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
+import { FaTwitter, FaWhatsapp, FaLinkedin,FaGithub } from 'react-icons/fa';
+
 
 const Contact = () => {
   const formRef = useRef();
@@ -33,16 +35,16 @@ const Contact = () => {
 
     emailjs
       .send(
-        import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
+        "service_koktasz",
+        "template_js585xk",
         {
           from_name: form.name,
-          to_name: "JavaScript Mastery",
+          to_name: "Ahmed Zine Eddine Marhoum",
           from_email: form.email,
-          to_email: "sujata@jsmastery.pro",
+          to_email: "a_marhoum@estin.dz",
           message: form.message,
         },
-        import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
+        "xJq6BFSdY9o3te3hQ"
       )
       .then(
         () => {
@@ -114,12 +116,28 @@ const Contact = () => {
             />
           </label>
 
-          <button
-            type='submit'
-            className='bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary'
-          >
-            {loading ? "Sending..." : "Send"}
-          </button>
+          <div className='flex items-center'>
+  <button
+    type='submit'
+    className='bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary'
+  >
+    {loading ? "Sending..." : "Send"}
+  </button>
+  <div className='flex ml-4'>
+    <a href='https://twitter.com/ZenoMarhoum' target='_blank' rel='noopener noreferrer'>
+      <FaTwitter className='text-3xl text-white mr-4 hover:text-blue-500 cursor-pointer' />
+    </a>
+    <a href='https://wa.me/213775064844' target='_blank' rel='noopener noreferrer'>
+      <FaWhatsapp className='text-3xl text-white mr-4 hover:text-green-500 cursor-pointer' />
+    </a>
+    <a href='https://www.linkedin.com/in/zeno-marhoum-71b2441b2/' target='_blank' rel='noopener noreferrer'>
+      <FaLinkedin className='text-3xl text-white mr-4 hover:text-blue-800 cursor-pointer' />
+    </a>
+    <a href='https://github.com/zeeenoo/' target='_blank' rel='noopener noreferrer'>
+      <FaGithub className='text-3xl text-white hover:text-black cursor-pointer' />
+    </a>
+  </div>
+</div>
         </form>
       </motion.div>
 

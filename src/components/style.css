@@ -1,0 +1,144 @@
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+
+  .container .btn {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 160px;
+    height: 50px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .container .btn a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 30px;
+    padding: 10px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    overflow: hidden;
+    color: #15002e;
+    font-weight: 400px;
+    z-index: 1;
+    transition: 0.5s;
+    backdrop-filter: blur(15px);
+  }
+  
+  .container .btn:hover a {
+    letter-spacing: 2px;
+  }
+  
+  .container .btn a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0.15), transparent);
+    transform: skewX(45deg) translate(0);
+    transition: 0.5s;
+    filter: blur(0px);
+  }
+  
+  .container .btn:hover a::before {
+    transform: skewX(45deg) translate(200px);
+  }
+  
+  .container .btn::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translatex(-50%);
+    bottom: -5px;
+    width: 30px;
+    height: 10px;
+    background: #D91B71;
+    border-radius: 10px;
+    transition: 0.5s;
+    transition-delay: 0.5;
+  }
+  
+  .container .btn:hover::before /*lightup button*/ {
+    bottom: 0;
+    height: 50%;
+    width: 80%;
+    border-radius: 30px;
+  }
+  
+  .container .btn::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translatex(-50%);
+    top: -5px;
+    width: 30px;
+    height: 10px;
+    background: #D91B71;
+    border-radius: 10px;
+    transition: 0.5s;
+    transition-delay: 0.5;
+  }
+  
+  .container .btn:hover::after /*lightup button*/ {
+    top: 0;
+    height: 50%;
+    width: 80%;
+    border-radius: 30px;
+  }
+  
+  .container .btn:nth-child(1)::before, /*chnage 1*/
+  .container .btn:nth-child(1)::after {
+    background: #ff1f71;
+    box-shadow: 0 0 5px #ff1f71, 0 0 15px #ff1f71, 0 0 30px #ff1f71,
+          0 0 60px #ff1f71;
+  }
+
+
+  .text {
+    background: linear-gradient(
+      90deg,
+      #D91B71 0%,
+      rgb(119, 0, 255) 10%,
+      rgb(33, 0, 179) 20%,
+      rgb(0, 231, 247) 30%,
+      rgba(63, 218, 216, 1) 40%,
+      rgba(47, 201, 226, 1) 50%,
+      rgba(28, 127, 238, 1) 60%,
+      rgba(95, 21, 242, 1) 70%,
+      rgba(186, 12, 248, 1) 80%,
+      rgba(251, 7, 217, 1) 90%,
+      #D91B71 100%
+    );
+    background-size: 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animation 2s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite
+      alternate-reverse;
+  }
+  @keyframes animation {
+    from {
+      background-position: 0x;
+    }
+    to {
+      background-position: 900px;
+    }
+  }
+  
